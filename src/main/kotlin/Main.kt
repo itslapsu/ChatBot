@@ -46,11 +46,12 @@ fun main(args: Array<String>) {
         "1. To repeat a statement multiple times.\n" +
         "2. To decompose a program into several small subroutines.\n" +
         "3. To determine the execution time of a program.\n" +
-        "4. To interrupt the execution of a program.\n> ")
+        "4. To interrupt the execution of a program.\n")
 
     var answer = false
 
     while (!answer) {
+        print("> ")
         val ans = read.nextInt()
 
         if (ans != 2) {

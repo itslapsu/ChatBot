@@ -5,22 +5,21 @@ fun main() {
     val target = readln().toInt()
 
     when(target) {
-        2, 8, 16 -> System.out.printf("Conversion result: %d", DecimalToTarget(decimal, target))
+        2, 8, 16 -> System.out.printf("Conversion result: ${DecimalToTarget(decimal, target)}")
         else -> println("Error: Please type 2, 8 or 16.")
     }
 }
 
-fun DecimalToTarget(decimal: Int, target: Int): Long {
+fun DecimalToTarget(decimal: Int, target: Int): String {
     var n = decimal
-    var number: Long = 0
-    var remainder: Int
-    var i = 1
+    val value = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    var out = ""
 
     while (n != 0) {
-        remainder = n % target
+        val i = n % target
+        out = value[i].toString() + out
         n /= target
-        number += (remainder * i).toLong()
-        i *= 10
     }
-    return number
+
+    return out
 }
